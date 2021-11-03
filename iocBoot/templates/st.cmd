@@ -22,7 +22,11 @@ gsd_registerRecordDeviceDriver(pdbbase)
 ## Set up IOC/hardware links -- LAN connection
 ##############################################################
 $$LOOP(DEVICE)
+$$IF(HOST)
 drvAsynIPPortConfigure( "bus$$INDEX", "$$HOST:$$PORT", 0, 0, 0 )
+$$ELSE(HOST)
+drvAsynSerialPortConfigure( "bus$$INDEX", "/dev/$$PORT", 0, 0, 0 )
+$$ENDIF(HOST)
 $$IF(ASYNTRACE)
 asynSetTraceMask( "bus$$INDEX", 0, 0x09 )
 asynSetTraceIOMask( "bus$$INDEX", 0, 0x0 )
