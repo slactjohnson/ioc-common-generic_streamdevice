@@ -42,7 +42,7 @@ $$ENDLOOP(DEVICE)
 dbLoadRecords( "db/iocSoft.db", "IOC=$(IOC_PV)")
 dbLoadRecords( "db/save_restoreStatus.db", "P=$(IOC_PV):")
 $$LOOP(DEVICE)
-dbLoadRecords( "db/gsd.db", "P=$$BASE, DEV=bus$$INDEX" )
+dbLoadRecords( "db/gsd.db", "BASE=$$BASE, DEV=bus$$INDEX" )
 $$ENDLOOP(DEVICE)
 
 ## Setup autosave
