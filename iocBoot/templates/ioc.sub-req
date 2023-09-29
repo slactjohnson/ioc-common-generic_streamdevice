@@ -2,13 +2,18 @@
 ## iocAdmin PV's on this IOC
 
 # Generate IOC autosave request
-file autosave_iocAdmin.tpl-req
+file autosave_iocAdmin.tpl-arch
+{
+    { IOC = "$$IOC_PV" }
+}
+
+file archive_SR.tpl-arch
 {
     { IOC = "$$IOC_PV" }
 }
 
 $$LOOP(DEVICE)
-file gsd.req
+file gsd.archive
 {
     { BASE = "$$BASE" }
 }

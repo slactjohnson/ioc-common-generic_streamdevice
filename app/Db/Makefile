@@ -19,13 +19,13 @@ DB += gsd.db
 # Create and install (or just install)
 # Archive files, templates, substitutions like this
 #
-ARCHIVE += gsd.archive
+ARCHIVE += gsd-ioc.archive
 
 #----------------------------------------------------
 # Create and install (or just install)
 # Autosave request files, templates, substitutions like this
 #
-REQ += gsd.req
+REQ += gsd-ioc.req
 
 # Nothing to build for autosave, just install from $AUTOSAVE/db
 DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
