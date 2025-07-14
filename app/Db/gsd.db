@@ -2,7 +2,57 @@
 #   BASE
 #       EPICS device prefix.
 #   DEV
-#	ASYN port
+#	    ASYN port
 
 # Add records here!!
 
+## EXAMPLES 
+
+record(stringin, "$(BASE):ID") {
+    field(DTYP, "stream")
+    field(INP,  "@gsd.proto GET_ID $(DEV)")
+    field(SCAN, "10 second")
+    field(PINI, "YES")
+}
+
+record(ai, "$(BASE):TEMP1") {
+    field(DTYP, "stream")
+    field(INP,  "@gsd.proto GET_TEMP(1) $(DEV)")
+    field(SCAN, "1 second")
+    field(PREC, "2")
+    field(EGU,  "°C")
+    field(HOPR, "100")
+    field(LOPR, "-20")
+}
+
+record(ai, "$(BASE):TEMP2") {
+    field(DTYP, "stream")
+    field(INP,  "@gsd.proto GET_TEMP(2) $(DEV)")
+    field(SCAN, "1 second")
+    field(PREC, "2")
+    field(EGU,  "°C")
+    field(HOPR, "100")
+    field(LOPR, "-20")
+}
+
+
+# Motor Position Records 
+
+record(ai, "$(BASE):MOTOR:X_POS") {
+    field(DTYP, "stream")
+    field(INP,  "@gsd.proto GET_MOTOR_POSITIONS($(BASE)) $(DEV)")
+    field(SCAN, "500 millisecond")
+    field(PREC, "3")
+    field(EGU,  "mm")
+}
+
+#NOTE: pos 2,3 are passive because protocol will update from GET POS
+record(ai, "$(BASE):MOTOR:Y_POS") {
+    field(PREC, "3")
+    field(EGU,  "mm")
+}
+
+record(ai, "$(BASE):MOTOR:Z_POS") {
+    field(PREC, "3")
+    field(EGU,  "mm")
+}
