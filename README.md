@@ -28,7 +28,7 @@ Please refer to the [IOC Design and Deployment Guide](https://confluence.slac.st
 1. **Define Protocol & Database**
     - Rename files `app/srcProtocol/gsd.proto` and `app/Db/gsd.db` to match your project/device name.
     - Edit the protocol file for your device's communication needs. See the [StreamDevice Protocol Guide](https://paulscherrerinstitute.github.io/StreamDevice/) for help in writing the protocol.
-    - For General EPICS records reference see [EPICS record types](https://epics.anl.gov/base/R7-0/4-docs/RecordReference.html).
+    - For general EPICS records reference see [EPICS record types](https://epics.anl.gov/base/R7-0/4-docs/RecordReference.html).
 
 2. **Autosave**
     - `app/Db/gsd.req` lists PVs to autosave. Rename and update for your project.
@@ -44,7 +44,7 @@ Please refer to the [IOC Design and Deployment Guide](https://confluence.slac.st
 
 5. **Update Makefiles and Scripts**
     - Change all references from "gsd" to your device name.
-    - there are a lot of places you will need o change the name. Help full to use a find_and_replace tool for "gsd"
+    - There are a lot of places you will need to change the name. It is helpful to use a find_and_replace tool for "gsd"
    - Ensure `RELEASE_SITE` and module versions in `config/RELEASE` are current
 
 6. **Create Test/Example Child IOC**
