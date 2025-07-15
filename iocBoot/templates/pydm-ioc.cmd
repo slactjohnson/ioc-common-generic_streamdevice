@@ -7,7 +7,7 @@ elif [ -e    /afs/slac/g/pcds/pyps/config/common_dirs.sh ]; then
 	source   /afs/slac/g/pcds/pyps/config/common_dirs.sh
 fi
 
-# TODO: use this to fix conda version to latest
+# TODO: use this to fix conda version to a specific release
 #PCDS_CONDA_VER=<version>
 
 source /cds/group/pcds/pyps/conda/pcds_conda

@@ -23,7 +23,7 @@ Please refer to the [IOC Design and Deployment Guide](https://confluence.slac.st
 
 ## Steps to Customize This IOC
 
-1.  Use this template to create a new repo in pcds devices. After forking this to your own profile, clone this into  `/reg/g/pcds/epics-dev/[username]/ioc/common/[manufacturer]/` during development.
+1.  Use this template to create a new repo in pcds devices. After forking this to your own profile, clone this into  `/cds/group/pcds/epics-dev/[username]/ioc/common/[manufacturer]/` during development.
 
 1. **Define Protocol & Database**
     - Rename files `app/srcProtocol/gsd.proto` and `app/Db/gsd.db` to match your project/device name.
@@ -65,7 +65,7 @@ All compilation and macro expansion uses `make`:
 
 ```bash
 # Build both parent and child IOCs (from repo root)
-make build
+make
 
 # Delete all build files
 make clean
@@ -83,9 +83,5 @@ You can run this script directly to start the IOC, but using [IOC Manager](https
 ### Deployment
 
 - Use the `ioc-deploy` script for deployment.
----
-Original Repository Location
-This repository was transferred from SLAC internal filesystems:
 
-/afs/slac.stanford.edu/g/cd/swe/git/repos/package/epics/ioc/common/generic_streamdevice.git
 

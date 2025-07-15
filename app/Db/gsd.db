@@ -2,7 +2,7 @@
 #   BASE
 #       EPICS device prefix.
 #   DEV
-#	    ASYN port
+#       ASYN port
 
 # Add records here!!
 
@@ -41,7 +41,7 @@ record(ai, "$(BASE):TEMP2") {
 record(ai, "$(BASE):MOTOR:X_POS") {
     field(DTYP, "stream")
     field(INP,  "@gsd.proto GET_MOTOR_POSITIONS($(BASE)) $(DEV)")
-    field(SCAN, "500 millisecond")
+    field(SCAN, "0.5 second")
     field(PREC, "3")
     field(EGU,  "mm")
 }
