@@ -10,3 +10,22 @@ ExtraInput    = Ignore;
 
 # Add protocol here!
 
+## EXAMPLES
+
+# basic string input
+# '%s' will only read 1 word, %#s will read whole line
+GET_ID        { out ":IDN?";           in "%s";}
+
+# reading a float "%f"
+# $1, $2 ... define variables passed from record, useful when many channels
+GET_TEMP        { out ":TEMP$1:VALUE?";           in "%f";}
+
+# update several records from a single response 
+# $1 in this example is the PV prefix for the motor position records
+
+GET_MOTOR_POSITIONS {
+    out ":MOTOR:POSITIONS?";
+    in "MOTOR X: %f, MOTOR Y: %($1:Y_POS)f, MOTOR Z: %($1:Z_POS)f ";
+}
+
+# see https://paulscherrerinstitute.github.io/StreamDevice/tipsandtricks.html#multiline for more examples
