@@ -1,4 +1,4 @@
-#!$$IOCTOP/bin/$$IF(ARCH,$$ARCH,linux-86_64)/gsd
+#!$$IOCTOP/bin/$$IF(TARGET_ARCH,$$TARGET_ARCH,rhel7-x86_64)/gsd
 
 epicsEnvSet( "IOCNAME",	  "$$IOCNAME" )
 epicsEnvSet( "ENGINEER",  "$$ENGINEER" )
